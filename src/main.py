@@ -7,11 +7,10 @@ import requests_cache
 from bs4 import BeautifulSoup
 from tqdm import tqdm
 
-from constants import (
-    BASE_DIR, MAIN_DOC_URL, PEP_DOC_URL)
 from configs import configure_argument_parser, configure_logging
+from constants import BASE_DIR, MAIN_DOC_URL, PEP_DOC_URL
 from outputs import control_output
-from utils import get_response, find_tag, find_all_tag, check_status
+from utils import check_status, find_all_tag, find_tag, get_response
 
 
 def whats_new(session):
@@ -44,6 +43,7 @@ def whats_new(session):
 
 
 def latest_versions(session):
+    """Мод latest-versions парсер собирает информацию о последних версиях"""
     response = get_response(session, MAIN_DOC_URL)
     if response is None:
         return
@@ -70,6 +70,7 @@ def latest_versions(session):
 
 
 def download(session):
+    """Мод download скачивает актуальную документацию"""
     downloads_url = urljoin(MAIN_DOC_URL, 'download.html')
     response = get_response(session, downloads_url)
     if response is None:
@@ -91,6 +92,7 @@ def download(session):
 
 
 def pep(session):
+    """Мод pep получает информацию о статусах pep и их количестве"""
     response = get_response(session, PEP_DOC_URL)
     if response is None:
         return
