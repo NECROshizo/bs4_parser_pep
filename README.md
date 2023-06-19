@@ -1,6 +1,7 @@
 # Проект парсинга pep
 ## Технологии
 [![Python](https://img.shields.io/badge/-Python-464646?style=flat&logo=Python&logoColor=56C0C0&color=gray)](https://www.python.org/) [![Beautifulsoup4](https://img.shields.io/badge/-Beautifulsoup4-464646?style=flat&logoColor=56C0C0&color=gray)](https://www.crummy.com/software/BeautifulSoup/) [![Prettytable](https://img.shields.io/badge/-Prettytable-464646?style=flat&color=gray)](https://github.com/jazzband/prettytable)
+
 Полный список модулей, используемых в проекте, доступен в [requirements.txt](https://github.com/NECROshizo/bs4_parser_pep/blob/master/requirements.txt)
 ## Линтеры
 [![Flake8](https://img.shields.io/badge/-flake8-464646?style=flat&logo=flake8&logoColor=56C0C0&color=gray)](https://flake8.pycqa.org/)
