@@ -4,13 +4,13 @@ import logging
 
 from prettytable import PrettyTable
 
-from constants import BASE_DIR, DATETIME_FORMAT
+from constants import BASE_DIR, DATETIME_FORMAT, LogMessage
 
 
 def control_output(results, cli_args):
     """Контролер вывода данных отработаного парсера"""
     output = cli_args.output
-    # match output:
+    # match output: TODO
     #     case 'pretty':
     #         pretty_output(results)
     #     case 'file':
@@ -43,7 +43,8 @@ def file_output(results, cli_args):
     with open(file_path, 'w', encoding='utf-8') as f:
         writer = csv.writer(f, dialect='unix')
         writer.writerows(results)
-    logging.info(f'Файл с результатами был сохранён: {file_path}')
+    logging.info(
+        LogMessage.SAVE_FILE.value.format(path=file_path))
 
 
 def pretty_output(results):
